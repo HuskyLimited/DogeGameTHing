@@ -1,0 +1,381 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local HubMain = Instance.new("ScreenGui")
+local LoadingScreen = Instance.new("Frame")
+local IconButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TopLabel = Instance.new("TextLabel")
+local RGB = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+HubMain.Name = "HubMain"
+HubMain.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+HubMain.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+LoadingScreen.Name = "LoadingScreen"
+LoadingScreen.Parent = HubMain
+LoadingScreen.Active = true
+LoadingScreen.AnchorPoint = Vector2.new(0.5, 0.5)
+LoadingScreen.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+LoadingScreen.BackgroundTransparency = 1.000
+LoadingScreen.BorderColor3 = Color3.fromRGB(3, 4, 6)
+LoadingScreen.BorderSizePixel = 0
+LoadingScreen.Position = UDim2.new(0.49987781, 0, 0.500330567, 0)
+LoadingScreen.Size = UDim2.new(0, 100, 0, 100)
+
+IconButton.Name = "IconButton"
+IconButton.Parent = LoadingScreen
+IconButton.AnchorPoint = Vector2.new(0.5, 0.5)
+IconButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+IconButton.BorderColor3 = Color3.fromRGB(27, 42, 53)
+IconButton.Position = UDim2.new(0.5, 0, 0.49000001, 0)
+IconButton.Size = UDim2.new(0, 100, 0, 100)
+IconButton.Font = Enum.Font.SourceSansSemibold
+IconButton.Text = "H"
+IconButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconButton.TextSize = 94.000
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = IconButton
+
+Frame.Parent = HubMain
+Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.346984357, 0, 0.34233129, 0)
+Frame.Size = UDim2.new(0, 410, 0, 256)
+Frame.Visible = false
+Frame.Draggable = true
+Frame.Active = true
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Frame
+
+TopLabel.Name = "Top Label"
+TopLabel.Parent = Frame
+TopLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TopLabel.BackgroundTransparency = 1.000
+TopLabel.Size = UDim2.new(0, 410, 0, 45)
+TopLabel.Font = Enum.Font.SourceSansSemibold
+TopLabel.Text = "HuskySploits"
+TopLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TopLabel.TextSize = 38.000
+
+RGB.Name = "RGB"
+RGB.Parent = Frame
+RGB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RGB.BorderSizePixel = 0
+RGB.Position = UDim2.new(0, 0, 0.17578125, 0)
+RGB.Size = UDim2.new(0, 410, 0, 2)
+RGB.Font = Enum.Font.SourceSans
+RGB.Text = ""
+RGB.TextColor3 = Color3.fromRGB(0, 0, 0)
+RGB.TextSize = 14.000
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0, 0, 0.20703125, 0)
+Title.Size = UDim2.new(0, 410, 0, 50)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "ShindoLife GUI"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 47.000
+
+Execute.Name = "Execute"
+Execute.Parent = Frame
+Execute.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+Execute.Position = UDim2.new(0.256097555, 0, 0.55859375, 0)
+Execute.Size = UDim2.new(0, 200, 0, 50)
+Execute.Font = Enum.Font.SourceSansSemibold
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 35.000
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = Execute
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 0.85546875, 0)
+TextLabel.Size = UDim2.new(0, 410, 0, 37)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Credit to owner of GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 17.000
+TextLabel.TextWrapped = true
+
+-- Scripts:
+
+local function SEXEFWT_fake_script() -- HubMain.MainScript 
+	local script = Instance.new('Script', HubMain)
+
+	local blur = Instance.new("BlurEffect", game.Lighting)
+	
+	script.Parent.LoadingScreen.IconButton.MouseButton1Click:Connect(function()
+		wait(1.45)
+		script.Parent.LoadingScreen.Visible = false
+		game.Lighting.Blur:Destroy()
+	end)
+	
+	script.Parent.LoadingScreen.IconButton.MouseButton1Click:Connect(function()
+		wait(.5)
+		script.Parent.LoadingScreen.IconButton.TextTransparency = 1
+		while true do
+			wait(.08)
+			script.Parent.LoadingScreen.IconButton.BackgroundTransparency = script.Parent.LoadingScreen.IconButton.BackgroundTransparency + 0.10
+			if script.Parent.LoadingScreen.IconButton.BackgroundTransparency == 1 then
+				break
+			end
+		end
+	end)
+	
+	script.Parent.LoadingScreen.IconButton.MouseButton1Click:Connect(function()
+		wait(1.5)
+		script.Parent.Frame.Visible = true
+	end)
+	
+	
+end
+coroutine.wrap(SEXEFWT_fake_script)()
+local function GSOMKAH_fake_script() -- IconButton.LocalScript 
+	local script = Instance.new('LocalScript', IconButton)
+
+	local text = script.Parent
+	local add = 10
+	wait(0)
+	local k = 1
+	while k <= 255 do
+		text.TextColor3 = Color3.new(k/255,0/255,0/255)
+		k = k + add
+		wait()
+	end
+	while true do
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255,k/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(0/255,255/255,k/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(k/255,0/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+			k = k + add
+			wait()
+		end
+		while k <= 255 do
+			text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+			k = k + add
+			wait()
+		end
+	end
+end
+coroutine.wrap(GSOMKAH_fake_script)()
+local function ZFRRFY_fake_script() -- RGB.LocalScript 
+	local script = Instance.new('LocalScript', RGB)
+
+	local text = script.Parent
+	local add = 10
+	wait(0)
+	local k = 1
+	while k <= 255 do
+		text.BackgroundColor3 = Color3.new(k/255,0/255,0/255)
+		k = k + add
+		wait()
+	end
+	while true do
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(255/255,k/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(0/255,255/255,k/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(k/255,0/255,255/255)
+			k = k + add
+			wait()
+		end
+		k = 1
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+			k = k + add
+			wait()
+		end
+		while k <= 255 do
+			text.BackgroundColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+			k = k + add
+			wait()
+		end
+	end
+end
+coroutine.wrap(ZFRRFY_fake_script)()
+local function CXQL_fake_script() -- Execute.LocalScript 
+	local script = Instance.new('LocalScript', Execute)
+
+	script.Parent.Parent.Execute.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Frame.Visible = false
+		Wait(0.5)
+		local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Doge Coin", "Sentinel")
+
+--properties
+local Player = Window:NewTab("Player")
+local Teleports = Window:NewTab("Teleports")
+local Toggle = Window:NewTab("Toggle")
+local Credits = Window:NewTab("Credits")
+
+--Player
+local Main = Player:NewSection("modification")
+    Main:NewSlider("WalkSpeed", "Change your WalkSpeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+-- Jump
+Main:NewSlider("Jump Hight", "Change your Jumphight", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+--tools
+local Main = Player:NewSection("Tools")
+Main:NewButton("Click to TP", "Equip tool and click to teleport", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/p9U0wKcG", true))()
+end)
+
+Main:NewButton("Collect GumDrops", "Collect gumdrops (May not work if collected 30)", function()
+while wait() do
+    for _,v in pairs(game.Workspace.Gumdrops:GetDescendants()) do
+        if v:IsA("TouchTransmitter") then
+wait()
+    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+            end
+        end
+    end
+end)
+
+--BTools
+
+Main:NewButton("BTools", "Delete things ig)", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/LETNPL0E", true))()
+end)
+
+Main:NewButton("AntiAFK", "No afk", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/hjK0WamL", true))()
+end)
+
+--[YAY TELEPORT GUI]--
+--Teleport
+        local Teleport = Teleports:NewSection("Lobby")
+        --scripts
+        --plot
+        Teleport:NewButton("plot", "To your Plot", function()
+            game:GetService("ReplicatedStorage").SpecWork.Shared.Network.Teleport:FireServer("Tycoon")
+        end)
+        -- sell
+        Teleport:NewButton("Sell", "To sell", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17.8061237, 59.1567574, 241.151505, 0.731384635, -0, -0.681965172, 0, 1, -0, 0.681965172, 0, 0.731384635)
+        end)
+        
+        Teleport:NewButton("Buy GPU", "To cooling", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.1308861, 59.1567574, 210.335999, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        end)
+        --cooling
+        local Teleport = Teleports:NewSection("Lv. 25")
+        
+        Teleport:NewButton("Buy cooling", "To cooling", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-229.786255, 56.8580666, -154.89621, 0.169068336, -2.55324668e-08, 0.985604346, -8.25127131e-08, 1, 4.00594367e-08, -0.985604346, -8.80976714e-08, 0.169068336)
+        end)
+        --gpu
+        Teleport:NewButton("Buy GPU", "To GPU", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.710922, 56.8580666, -299.440826, 0.542595148, -1.76804065e-08, 0.839994371, -2.96800451e-09, 1, 2.29654287e-08, -0.839994371, -1.49540362e-08, 0.542595148)
+        end)
+        --level 50?
+        local Teleport = Teleports:NewSection("Lv. 50")
+        
+        Teleport:NewButton("Buy GPU", "To GPU", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-137.610443, 57.5006371, -492.452942, -0.872447252, 8.51713224e-08, 0.488708287, 1.09267923e-07, 1, 2.07878106e-08, -0.488708287, 7.15364052e-08, -0.872447252)
+        end)
+        
+        --level 75
+        local Teleport = Teleports:NewSection("Lv. 75")
+        
+        Teleport:NewButton("Marketplace", "To Marketplace", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-349.577576, 56.9450264, -525.824402, -0.236097857, -5.68492453e-08, 0.971729279, -2.64647788e-08, 1, 5.20731085e-08, -0.971729279, -1.34222509e-08, -0.236097857)
+        end)
+        
+--[YAY TOGGLE GUI ]
+local Toggleing = Toggle:NewSection("Toggle UI")
+
+Toggleing:NewKeybind("Toggle GUI", "Create your toggle gui", Enum.KeyCode.P, function()
+	Library:ToggleUI()
+end)
+
+
+
+
+
+
+
+
+
+    
+
+
+	end)
+end
+coroutine.wrap(CXQL_fake_script)()
+
+
